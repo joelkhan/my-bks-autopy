@@ -36,6 +36,7 @@ def collatz(number):
         res = number * 3 + 1
     return res
 
+
 while True:
     print('Enter number:')
     try:
@@ -48,3 +49,7 @@ while True:
 
     except ValueError:
         print('You must enter an integer')
+    except KeyboardInterrupt:
+        print('bye~')
+        sys.exit()
+
