@@ -7,3 +7,10 @@ for character in message:
     count[character] = count[character] + 1
 
 pprint.pprint(count)
+
+# 下面两行等价
+pprint.pprint(count.values())
+print(pprint.pformat(count.values()))
+
+
+

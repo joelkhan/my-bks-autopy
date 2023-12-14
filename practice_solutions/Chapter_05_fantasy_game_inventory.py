@@ -20,7 +20,9 @@ The addToInventory() function should return a dictionary that represents the
 updated inventory.
 
 '''
-
+#
+# 这段代码包含了5.6.2和5.6.3
+#
 stuff = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
 
 inv = {'gold coin': 42, 'rope': 1}
@@ -32,8 +34,7 @@ def displayInventory(inventory):
     for k, v in inventory.items():
         print(f'{v} {k}')
         item_total += v
-
-    print("Total number of items: " + str(item_total))
+    print("Total number of items: " + str(item_total) + "\n")
 
 def addToInventory(inventory, addedItems):
     for item in addedItems:
@@ -45,3 +46,5 @@ displayInventory(stuff)
 
 inv = addToInventory(inv, dragonLoot)
 displayInventory(inv)
+
+

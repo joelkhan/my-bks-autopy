@@ -16,19 +16,52 @@ white or black, followed by 'pawn', 'knight', 'bishop', 'rook', 'queen', or
 chess board.
 
 '''
-correctcb = {'8h': 'bking', '6c': 'wqueen', '2g': 'bbishop', '5g': 'bqueen', '3e': 'wking'}
-wrongNumber = {'8h': 'bking', '6c': 'wqueen', '0g': 'bbishop', '5g': 'bqueen', '3e': 'wking'}
-wrongLetter = {'8h': 'bking', '6i': 'wqueen', '0g': 'bbishop', '5g': 'bqueen', '3e': 'wking'}
-twoBKings = {'8h': 'bking', '2h': 'bking', '6c': 'wqueen', '2g': 'bbishop', '5g': 'bqueen', '3e': 'wking'}
-twoWKings = {'8h': 'bking', '6c': 'wqueen', '2g': 'wking', '5g': 'bqueen', '3e': 'wking'}
-seventeenBPieces = {'1a': 'bking', '1b': 'bqueen', '1c': 'bbishop', '1d': 'bqueen', '1e': 'bbishop', '1f': 'bbishop', '1g': 'bbishop', '1h': 'bbishop', '2a': 'bpawn', '2b': 'bpawn', '2c': 'bpawn', '2d': 'bpawn', '2e': 'bpawn', '2f': 'bpawn', '2g': 'bpawn', '2h': 'bpawn', '3a': 'bpawn', '8a': 'wking', '8b': 'wqueen', '8c': 'wbishop', '8d': 'wqueen', '8e': 'wbishop', '8f': 'wbishop', '8g': 'wbishop', '8h': 'wbishop', '7a': 'wpawn', '7b': 'wpawn', '7c': 'wpawn', '7d': 'wpawn', '7e': 'wpawn', '7f': 'wpawn', '7g': 'wpawn', '7h': 'wpawn'}
-seventeenWPieces = {'8a': 'bking', '8b': 'bqueen', '8c': 'bbishop', '8d': 'bqueen', '8e': 'bbishop', '8f': 'bbishop', '8g': 'bbishop', '8h': 'bbishop', '2a': 'bpawn', '2b': 'bpawn', '2c': 'bpawn', '2d': 'bpawn', '2e': 'bpawn', '2f': 'bpawn', '2g': 'bpawn', '2h': 'bpawn', '8a': 'wking', '8b': 'wqueen', '8c': 'wbishop', '8d': 'wqueen', '8e': 'wbishop', '8f': 'wbishop', '8g': 'wbishop', '8h': 'wbishop', '7a': 'wpawn', '7b': 'wpawn', '7c': 'wpawn', '7d': 'wpawn', '7e': 'wpawn', '7f': 'wpawn', '7g': 'wpawn', '7h': 'wpawn', '6a': 'wpawn'}
-nineBPawns = {'1a': 'bking', '1b': 'bqueen', '1c': 'bbishop', '1d': 'bqueen', '1e': 'bbishop', '1g': 'bbishop', '1h': 'bbishop', '2a': 'bpawn', '2b': 'bpawn', '2c': 'bpawn', '2d': 'bpawn', '2e': 'bpawn', '2f': 'bpawn', '2g': 'bpawn', '2h': 'bpawn', '3a': 'bpawn', '8a': 'wking', '8b': 'wqueen', '8c': 'wbishop', '8d': 'wqueen', '8e': 'wbishop', '8f': 'wbishop', '8g': 'wbishop', '8h': 'wbishop', '7a': 'wpawn', '7b': 'wpawn', '7c': 'wpawn', '7d': 'wpawn', '7e': 'wpawn', '7f': 'wpawn', '7g': 'wpawn', '7h': 'wpawn'}
-nineWPawns = {'8a': 'bking', '8b': 'bqueen', '8c': 'bbishop', '8d': 'bqueen', '8e': 'bbishop', '8f': 'bbishop', '8g': 'bbishop', '8h': 'bbishop', '2a': 'bpawn', '2b': 'bpawn', '2c': 'bpawn', '2d': 'bpawn', '2e': 'bpawn', '2f': 'bpawn', '2g': 'bpawn', '2h': 'bpawn', '8a': 'wking', '8b': 'wqueen', '8c': 'wbishop', '8d': 'wqueen', '8f': 'wbishop', '8g': 'wbishop', '8h': 'wbishop', '7a': 'wpawn', '7b': 'wpawn', '7c': 'wpawn', '7d': 'wpawn', '7e': 'wpawn', '7f': 'wpawn', '7g': 'wpawn', '7h': 'wpawn', '6a': 'wpawn'}
-wrongNames = {'8h': 'bkeeng', '6c': 'wqueen', '2g': 'wking', '5g': 'bqueen', '3e': 'wking'}
+# 定义了10组测试数据
+correctcb = {'8h': 'bking', '6c': 'wqueen', '2g': 'bbishop', '5g': 'bqueen', 
+    '3e': 'wking'}
+wrongNumber = {'8h': 'bking', '6c': 'wqueen', '0g': 'bbishop', '5g': 'bqueen', 
+    '3e': 'wking'}
+wrongLetter = {'8h': 'bking', '6i': 'wqueen', '0g': 'bbishop', '5g': 'bqueen', 
+    '3e': 'wking'}
+twoBKings = {'8h': 'bking', '2h': 'bking', '6c': 'wqueen', '2g': 'bbishop', 
+    '5g': 'bqueen', '3e': 'wking'}
+twoWKings = {'8h': 'bking', '6c': 'wqueen', '2g': 'wking', '5g': 'bqueen', 
+    '3e': 'wking'}
+seventeenBPieces = {'1a': 'bking', '1b': 'bqueen', '1c': 'bbishop', '1d': 'bqueen', 
+    '1e': 'bbishop', '1f': 'bbishop', '1g': 'bbishop', '1h': 'bbishop', '2a': 'bpawn', 
+    '2b': 'bpawn', '2c': 'bpawn', '2d': 'bpawn', '2e': 'bpawn', '2f': 'bpawn', 
+    '2g': 'bpawn', '2h': 'bpawn', '3a': 'bpawn', '8a': 'wking', '8b': 'wqueen', 
+    '8c': 'wbishop', '8d': 'wqueen', '8e': 'wbishop', '8f': 'wbishop', '8g': 'wbishop', 
+    '8h': 'wbishop', '7a': 'wpawn', '7b': 'wpawn', '7c': 'wpawn', '7d': 'wpawn', 
+    '7e': 'wpawn', '7f': 'wpawn', '7g': 'wpawn', '7h': 'wpawn'}
+seventeenWPieces = {'8a': 'bking', '8b': 'bqueen', '8c': 'bbishop', '8d': 'bqueen', 
+    '8e': 'bbishop', '8f': 'bbishop', '8g': 'bbishop', '8h': 'bbishop', '2a': 'bpawn', 
+    '2b': 'bpawn', '2c': 'bpawn', '2d': 'bpawn', '2e': 'bpawn', '2f': 'bpawn', '2g': 'bpawn', 
+    '2h': 'bpawn', '8a': 'wking', '8b': 'wqueen', '8c': 'wbishop', '8d': 'wqueen', 
+    '8e': 'wbishop', '8f': 'wbishop', '8g': 'wbishop', '8h': 'wbishop', '7a': 'wpawn', 
+    '7b': 'wpawn', '7c': 'wpawn', '7d': 'wpawn', '7e': 'wpawn', '7f': 'wpawn', '7g': 'wpawn', 
+    '7h': 'wpawn', '6a': 'wpawn'}
+nineBPawns = {'1a': 'bking', '1b': 'bqueen', '1c': 'bbishop', '1d': 'bqueen', 
+    '1e': 'bbishop', '1g': 'bbishop', '1h': 'bbishop', '2a': 'bpawn', '2b': 'bpawn', 
+    '2c': 'bpawn', '2d': 'bpawn', '2e': 'bpawn', '2f': 'bpawn', '2g': 'bpawn', 
+    '2h': 'bpawn', '3a': 'bpawn', '8a': 'wking', '8b': 'wqueen', '8c': 'wbishop', 
+    '8d': 'wqueen', '8e': 'wbishop', '8f': 'wbishop', '8g': 'wbishop', '8h': 'wbishop', 
+    '7a': 'wpawn', '7b': 'wpawn', '7c': 'wpawn', '7d': 'wpawn', '7e': 'wpawn', 
+    '7f': 'wpawn', '7g': 'wpawn', '7h': 'wpawn'}
+nineWPawns = {'8a': 'bking', '8b': 'bqueen', '8c': 'bbishop', '8d': 'bqueen', 
+    '8e': 'bbishop', '8f': 'bbishop', '8g': 'bbishop', '8h': 'bbishop', '2a': 'bpawn', 
+    '2b': 'bpawn', '2c': 'bpawn', '2d': 'bpawn', '2e': 'bpawn', '2f': 'bpawn', 
+    '2g': 'bpawn', '2h': 'bpawn', '8a': 'wking', '8b': 'wqueen', '8c': 'wbishop', 
+    '8d': 'wqueen', '8f': 'wbishop', '8g': 'wbishop', '8h': 'wbishop', '7a': 'wpawn', 
+    '7b': 'wpawn', '7c': 'wpawn', '7d': 'wpawn', '7e': 'wpawn', '7f': 'wpawn', 
+    '7g': 'wpawn', '7h': 'wpawn', '6a': 'wpawn'}
+wrongNames = {'8h': 'bkeeng', '6c': 'wqueen', '2g': 'wking', '5g': 'bqueen', 
+    '3e': 'wking'}
+
 
 piecesNames = ['pawn', 'knight', 'bishop', 'rook', 'queen', 'king']
 
+# 验证函数
 def isValidChessBoard(chessBoard):
 
     totalbCount = 0
@@ -39,17 +72,17 @@ def isValidChessBoard(chessBoard):
     wpawnCount = 0
 
     for currentValue in chessBoard.values():
-        if(currentValue[0] is 'b'):
+        if(currentValue[0] == 'b'):
             totalbCount += 1
-        if(currentValue[0] is 'w'):
+        if(currentValue[0] == 'w'):
             totalwCount += 1
-        if(currentValue is 'bking'):
+        if(currentValue == 'bking'):
             bkingCount += 1
-        if(currentValue is 'wking'):
+        if(currentValue == 'wking'):
             wkingCount += 1
-        if(currentValue is 'bpawn'):
+        if(currentValue == 'bpawn'):
             bpawnCount += 1
-        if(currentValue is 'wpawn'):
+        if(currentValue == 'wpawn'):
             wpawnCount += 1
      
         if(bkingCount > 1):
@@ -80,18 +113,31 @@ def isValidChessBoard(chessBoard):
         if(int(currentKey[0]) < 1 or int(currentKey[0]) > 8):
             print(f'Position is not between 8 and 8: {currentKey}')
             return False
-        elif(ord(currentKey[1]) < 97 or ord(currentKey[1]) > 104):
+        elif(ord(currentKey[1]) < 97 or ord(currentKey[1]) > 104): # 97是a，104是h
             print(f'Position is not between a and h: {currentKey}')
             return False
     return True
 
+# 运行测试数据
 print(isValidChessBoard(correctcb))
+print()
 print(isValidChessBoard(wrongNumber)) 
+print()
 print(isValidChessBoard(wrongLetter))
+print()
 print(isValidChessBoard(twoBKings))
+print()
 print(isValidChessBoard(twoWKings))
+print()
 print(isValidChessBoard(seventeenBPieces))
+print()
 print(isValidChessBoard(seventeenWPieces))
+print()
 print(isValidChessBoard(nineBPawns))
+print()
 print(isValidChessBoard(nineWPawns))
+print()
 print(isValidChessBoard(wrongNames))
+print()
+
+
