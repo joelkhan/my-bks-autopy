@@ -20,6 +20,9 @@ def show_conway_chart(h, w, cells):
 
 #
 # conway的主程序
+# 
+# 调整了time.sleep(0.1)，加快程序运行，即模拟细胞快速更新
+# 感觉conway游戏最终是趋向于一个稳定的状态？？
 #
 WIDTH = 60
 HEIGHT = 20
