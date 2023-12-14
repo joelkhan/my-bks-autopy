@@ -26,15 +26,15 @@ the other 50% of the time.
 
 import random
 numberOfStreaks = 0
-for experimentNumber in range(10000):
+for experimentNumber in range(10000): # 测试10000次
     resultList = []
-    for i in range(100):
+    for i in range(100): # 每次模拟投掷100次硬币
         result = random.randint(0,1)
         resultList.append(result)
 
     counterzero = 0
     counterone = 0
-    for res in resultList:
+    for res in resultList:  # 开始对本次结果进行检查
         if res == 0:
             counterzero+=1
             counterone=0
@@ -42,10 +42,11 @@ for experimentNumber in range(10000):
             counterzero=0
             counterone+=1
 
-        if counterzero == 6 or counterone == 6:
+        if counterzero == 6 or counterone == 6: # 只要发现了连续的6个（无论正面还是反面），就直接退出本次检查
             counterzero = 0
             counterone = 0
             numberOfStreaks+=1
             break
 
-print('Chance of streak: %s%%' % (numberOfStreaks / 100))
+print('Chance of streak: %s%%' % ((numberOfStreaks / 10000) * 100))
+

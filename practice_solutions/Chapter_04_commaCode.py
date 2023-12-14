@@ -19,12 +19,24 @@ emptylist = []
 mixedlist = ['apples', 3.14, True, 'end']
 def commacode(listinput):
     result = ''
-    if len(listinput) > 0:
+    if len(listinput) > 1:
         for item in listinput[:-1]:
             result += str(item) + ', '
+        result = result[:-2] + " "
         result += 'and ' + listinput[-1]
+    elif len(listinput) == 1:
+        result = str(listinput[0])
     return result
 
 print(commacode(spam))
 print(commacode(emptylist))
 print(commacode(mixedlist))
+
+# more test
+onlyOne = ['asdf']
+justTwo = ['asdf', 'qwer']
+threeIsOk = ['asdf', 'qwer', 'zxcv']
+print(commacode(onlyOne))
+print(commacode(justTwo))
+print(commacode(threeIsOk))
+
