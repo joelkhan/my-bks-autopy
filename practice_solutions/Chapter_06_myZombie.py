@@ -15,6 +15,10 @@ compare against the other bots. Specifically, try to create the following bots:
 
 '''
 
+#
+# 通读了一遍书中的原文，暂时跳过代码
+#
+
 import zombiedice, random
 
 class RandomContinueZombie:
@@ -126,3 +130,7 @@ zombies = (
 # Uncomment one of the following lines to run in CLI or Web GUI mode:
 zombiedice.runTournament(zombies=zombies, numGames=1000)
 #zombiedice.runWebGui(zombies=zombies, numGames=1000)
+
+
+
+
