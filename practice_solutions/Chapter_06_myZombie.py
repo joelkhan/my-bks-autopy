@@ -16,7 +16,9 @@ compare against the other bots. Specifically, try to create the following bots:
 '''
 
 #
-# 通读了一遍书中的原文，暂时跳过代码
+# 通读了一遍书中的原文，暂时跳过代码，因为：
+# 1. 游戏逻辑本身相对复杂（需要大段时间思考），
+# 2. 而且需要一些类的基础知识
 #
 
 import zombiedice, random
