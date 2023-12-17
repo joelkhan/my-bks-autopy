@@ -32,6 +32,13 @@ dateRegex = re.compile(r'(^[0-3]\d)\/([0-1][0-9])\/([1-2]\d{3})')
 for testDate in testDates:
     print(f'Checking: {testDate}')
     try:
+        mo = dateRegex.findall(testDate)
+        print(len(mo))
+        print(mo)
+        print(mo[0])
+        # 注意：
+        # 1. 这个正则在定义的时候没有整体的括号，所以元组的0元素是day
+        # 2. 这里没有使用search，否则虽然也能完成匹配，但还需要对字符串做处理
         day, month, year = dateRegex.findall(testDate)[0]
     except:
         print(f'{testDate} is not a valid date.') 
@@ -45,3 +52,19 @@ for testDate in testDates:
         print(f'{month} has only 29 days')
     elif(int(day) > 31):
         print(f'{month} has only 31 days')
+
+
+# 这个正则有一个整体的小括号，所以，如果使用findall，结果元组的0元素将是“整体匹配结果”，
+# 从元素1开始，一一对应模式内的分组括号
+phoneRegex = re.compile(r'''(             # 这是0
+    (\d{3}|\(\d{3}\))? # area code        # 这是1，那个被转移的小括号不算！
+    (\s|-|\.)? # separator                # 这是2
+    (\d{3}) # first 3 digits              # 3
+    (\s|-|\.) # separator                 # 4
+    (\d{4}) # last 4 digits               # 5
+    (\s*(ext|x|ext.)\s*(\d{2,5}))? # extension  # 6、7、8
+)''', re.VERBOSE)
+
+
+
+

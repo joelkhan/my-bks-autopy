@@ -23,6 +23,7 @@ import re
 
 passwords = [ 'shortpw', '8charact', 'onlylower', 'ONLYUPPER', 'NoDigitDigit', 'C0rrectPw']
 
+# 这是一种思路，把复杂的检查条件拆分成多个小的条件
 def checkPassword(password):
     print(f'Checking {password}:')
     lengthRegex = re.compile(r'.{8,}') # Length >= 8
@@ -42,3 +43,5 @@ def checkPassword(password):
 
 for pw in passwords:
     print(checkPassword(pw))
+
+

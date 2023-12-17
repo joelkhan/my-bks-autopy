@@ -3,6 +3,7 @@
 
 import pyperclip, re
 
+# Create phone numbers regex.
 phoneRegex = re.compile(r'''(
     (\d{3}|\(\d{3}\))? # area code
     (\s|-|\.)?         # separator

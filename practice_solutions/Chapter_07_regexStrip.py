@@ -26,9 +26,12 @@ def regexStrip(stripme, removeChars=None):
         for char in removeChars:
             if(char in regexEscapes):
                 escapedRemoveChars += '\\' + char
+        print('^' + escapedRemoveChars + '*|' + escapedRemoveChars + '*$')
         return re.sub('^' + escapedRemoveChars + '*|' + escapedRemoveChars + '*$', '', stripme)
     
 for testS in testStrings:
     print(regexStrip(testS) == testS.strip()) 
 for testOptS in testStringsOptChars:
-    print(regexStrip(testS, '*') == testS.strip('*'))
+    print(regexStrip(testS, '*,') == testS.strip('*,'))
+
+
