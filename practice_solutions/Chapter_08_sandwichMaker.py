@@ -20,6 +20,7 @@ display a total cost after the user enters their selection
 
 import pyinputplus as pyip
 
+# 定义价格
 prices = {
     'breads': {
         'wheat': 1.00,
@@ -45,15 +46,18 @@ prices = {
 
 totalSandwich = 0
 
-breadChoice = pyip.inputMenu(prices['breads'].keys(), prompt='What type of bread do you want? ')
+breadChoice = pyip.inputMenu(prices['breads'].keys(), 
+    prompt='What type of bread do you want? ')
 totalSandwich += prices['breads'][breadChoice]
 
-proteinChoice = pyip.inputMenu(prices['proteins'].keys(), prompt='What type of protein do you want? ')
+proteinChoice = pyip.inputMenu(prices['proteins'].keys(), 
+    prompt='What type of protein do you want? ')
 totalSandwich += prices['proteins'][proteinChoice]
 
 cheeseYesNo = pyip.inputYesNo(prompt='Do you want cheese on your sandwich? ')
 if cheeseYesNo == 'yes':
-    cheeseChoice = pyip.inputMenu(prices['cheeses'].keys(), prompt='What kind of cheese do you want? ')
+    cheeseChoice = pyip.inputMenu(prices['cheeses'].keys(), 
+        prompt='What kind of cheese do you want? ')
     totalSandwich += prices['cheeses'][cheeseChoice]
 
 mayoYesNo = pyip.inputYesNo(prompt='Do you want mayo on your sandwich? ')
@@ -76,3 +80,5 @@ sandwichQuantity = pyip.inputInt(prompt='How many sandwiches do you want? ', min
 totalSandwich *= sandwichQuantity
 
 print('Total cost: ${:.2f}'.format(totalSandwich))
+
+

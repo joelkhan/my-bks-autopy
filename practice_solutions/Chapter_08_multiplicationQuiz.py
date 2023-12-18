@@ -32,7 +32,6 @@ for questionNumber in range(numberOfQuestions):
     result = multiplier * multiplicand
 
     while(tries > 0):
-
         if(starttime == 0):
             starttime = time.time()
 
@@ -43,19 +42,27 @@ for questionNumber in range(numberOfQuestions):
                 break
             except ValueError:
                 print('Not a number, please try again')
-
+        
+        # 按题目描述，合理的判断逻辑是：
+        # 1. 判断是否超时 if
+        # 2. 判断是否正确 elif
+        # 3. 处理错误答案 else
         if(answer == result):
             print('Correct!')
             correctAnswers += 1
             time.sleep(1)
-            break
+            break    # 进入下一题
         elif((time.time()-starttime)>=8):
             print('Time\'s up.')
-            break
+            break    # 进入下一题，这里可能有问题，应该先判断是否超时！
         else:
             print('Incorrect, try again!')
-            tries -= 1
+            tries -= 1    # 再次尝试本题
+            
     questionNumber += 1
+    time.sleep(1) # 每题之间，间隔1秒
 
-time.sleep(1)
+#time.sleep(1)
 print('Score: %s / %s' % (correctAnswers, numberOfQuestions))
+
+
