@@ -40,11 +40,14 @@ import re
 import sys
 
 keywords = ['ADJECTIVE', 'NOUN', 'ADVERB', 'VERB']
+print(len(sys.argv))
+print(sys.argv)
 
 if(len(sys.argv) == 2):
     with open(sys.argv[1]) as txtfile:
         txt = txtfile.read()
-
+    print(f'origin: {txt}')
+    
     for keyword in keywords:
         while(keyword in txt):
             print(f'Found {keyword}')
@@ -55,3 +58,5 @@ if(len(sys.argv) == 2):
 
     with open('madlibs_subs.txt', 'w') as newTxtfile:
         newTxtfile.write(txt)
+
+

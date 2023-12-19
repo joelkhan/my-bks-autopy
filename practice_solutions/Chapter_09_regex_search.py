@@ -24,3 +24,5 @@ for txtFile in list(p.glob('*.txt')):
         for txtLine in txtLines:
             if(pattern.search(txtLine)):
                 print(txtLine)
+
+
