@@ -25,13 +25,15 @@ if(len(sys.argv) == 3):
     searchedDir = Path(sys.argv[1])
 
     try:
-        minSize = int(sys.argv[2]) 
+        minSize = int(sys.argv[2])  # 获取文件大小的下限，超过这个值的文件被list出来
     except ValueError:
         print(f'{minSize} is not an Integer.')
     else:
         # save each filename and size in a tuple under the key 'entries' in a dict
         fileTable = {} 
-        fileTable['entries'] = []
+        # 这个entries键保存了一个元组的列表，
+        # 每个元组包含了文件的绝对路径和size
+        fileTable['entries'] = [] 
         fileTable.setdefault('pathlength', 0)
 
         for dirname, dirnames , filenames in os.walk(searchedDir):
@@ -43,7 +45,9 @@ if(len(sys.argv) == 3):
                     abspath = os.path.abspath(filename) 
                     fileTable['entries'].append((abspath, fileSize))
                     pathlength = len(abspath)
-                    if pathlength > fileTable['pathlength']:   # Check for the longest pathlength in dir 
+                    # Check for the longest pathlength in dir 
+                    # 在后面打印一个漂亮的表格
+                    if pathlength > fileTable['pathlength']: 
                         fileTable['pathlength'] = pathlength
 
         # pretty print the filenames and sizes     
@@ -52,3 +56,7 @@ if(len(sys.argv) == 3):
 
 else:
     print('Usage: python deletingUnneededFiles.py path size')
+
+
+
+

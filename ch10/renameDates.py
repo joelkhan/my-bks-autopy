@@ -21,6 +21,7 @@ for amerFilename in os.listdir('.'):
         continue
 
     # Get the different parts of the filename.
+    # 使用search和findall时，应该如何计算左括号，请参看renameDates_regex_demo.py
     beforePart = mo.group(1)
     monthPart  = mo.group(2)
     dayPart    = mo.group(4)
@@ -38,3 +39,5 @@ for amerFilename in os.listdir('.'):
     # Rename the files.
     print('Renaming "%s" to "%s"...' % (amerFilename, euroFilename))
     #shutil.move(amerFilename, euroFilename) # uncomment after testing
+
+

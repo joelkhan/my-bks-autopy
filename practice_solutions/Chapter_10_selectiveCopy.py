@@ -25,5 +25,7 @@ if(len(sys.argv) == 4):
         print(f'Copying {dirname} to {newPath}')
         shutil.copy(dirname, newPath)
 else: 
+    print(sys.argv)
     print('Usage: python selectiveCopy.py filetype oldDir newDir')
+
 
