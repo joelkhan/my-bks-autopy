@@ -1,3 +1,5 @@
+# 函数boxPrint是使用raise语句抛出异常的
+# 处理异常是调用者需要做的
 def boxPrint(symbol, width, height):
     if len(symbol) != 1:
         raise Exception('Symbol must be a single character string.')
@@ -16,3 +18,5 @@ for sym, w, h in (('*', 4, 4), ('O', 20, 5), ('x', 1, 3), ('ZZ', 3, 3)):
         boxPrint(sym, w, h)
     except Exception as err:
         print('An exception happened: ' + str(err))
+
+
