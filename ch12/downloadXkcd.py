@@ -3,7 +3,9 @@
 
 import requests, os, bs4
 
+# XKCD， “一个关于浪漫、 讽刺、 数学和语言的漫画网站”
 url = 'http://xkcd.com' # starting url
+# 如果xkcd文件夹已经存在， 那么关键字参数exist_ok=True可用于防止该函数抛出异常。 
 os.makedirs('xkcd', exist_ok=True) # store comics in ./xkcd
 while not url.endswith('#'):
     # Download the page.
@@ -25,6 +27,7 @@ while not url.endswith('#'):
         res.raise_for_status()
 
         # Save the image to ./xkcd
+        # 二进制写模式保存图片
         imageFile = open(os.path.join('xkcd', os.path.basename(comicUrl)), 'wb')
         for chunk in res.iter_content(100000):
             imageFile.write(chunk)

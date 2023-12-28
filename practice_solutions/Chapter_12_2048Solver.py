@@ -12,14 +12,14 @@ automatically play the game.
 
 '''
 # URL has changed since the release of the book, is now:
-GAMEURL='https://play2048.co/'
+GAME_URL='https://play2048.co/'
 
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 
 with webdriver.Firefox() as browser:
-    browser.get(GAMEURL)
+    browser.get(GAME_URL)
     htmlElem = browser.find_element_by_tag_name('html')
     
     while True:
@@ -34,3 +34,6 @@ with webdriver.Firefox() as browser:
     
     scoreElem = browser.find_element_by_css_selector('.score-container')
     print(f'Your score is: {scoreElem.text}')
+
+
+

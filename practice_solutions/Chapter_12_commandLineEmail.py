@@ -10,11 +10,14 @@ want to set up a separate email account for this program.)
 This would be a nice way to add a notification feature to your programs.
 You could also write a similar program to send messages from
 a Facebook or Twitter account.
+
 '''
 
 emailAddress = 'my@emailaddress'
 emailRecipient = ''
+# 登录页
 emailLoginPage = 'https://webmailer.hosteurope.de/login.php?server=squirrel&version=1&'
+# compose page 撰写邮件页
 emailComposePage = 'https://webmailer.hosteurope.de/squirrelmail_new/src/compose.php?mailbox=INBOX&startMessage=1'
 emailMessage = ''
 logoutLink = 'Abmelden'
@@ -24,7 +27,8 @@ import pyinputplus as pyip
 
 import logging, sys
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, 
+    format='%(asctime)s - %(levelname)s - %(message)s')
 
 if(len(sys.argv) >= 2):
     emailRecipient = sys.argv[1]
@@ -41,7 +45,6 @@ if(len(sys.argv) >= 2):
 
         passwordElement = browser.find_element_by_id('password')
         passwordInput = pyip.inputPassword()
-
         passwordElement.send_keys(passwordInput)
 
         submitElement = browser.find_element_by_id('form_submit')
