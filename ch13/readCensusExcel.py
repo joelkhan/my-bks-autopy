@@ -11,6 +11,7 @@ countyData = {}
 print('Reading rows...')
 for row in range(2, sheet.get_highest_row() + 1):
     # Each row in the spreadsheet has data for one census tract.
+    # 每行代表一个普查区，一个县有多个普查区，一个州有多个县
     state  = sheet['B' + str(row)].value
     county = sheet['C' + str(row)].value
     pop    = sheet['D' + str(row)].value
@@ -31,3 +32,5 @@ resultFile = open('census2010.py', 'w')
 resultFile.write('allData = ' + pprint.pformat(countyData))
 resultFile.close()
 print('Done.')
+
+
