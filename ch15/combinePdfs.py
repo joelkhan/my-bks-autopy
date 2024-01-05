@@ -27,3 +27,5 @@ for filename in pdfFiles:
 pdfOutput = open('allminutes.pdf', 'wb')
 pdfWriter.write(pdfOutput)
 pdfOutput.close()
+
+
