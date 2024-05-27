@@ -50,6 +50,6 @@ while True:
     except ValueError:
         print('You must enter an integer')
     except KeyboardInterrupt:
-        print('bye~')
+        print('\nbye~')
         sys.exit()
 
