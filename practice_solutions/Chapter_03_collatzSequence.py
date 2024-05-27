@@ -34,6 +34,7 @@ def collatz(number):
         res = number // 2
     elif number % 2 == 1:
         res = number * 3 + 1
+    print(res)
     return res
 
 
@@ -43,7 +44,7 @@ while True:
         number = int(input())
         while True:
             number = collatz(number)
-            print(number)
+            #print(number)
             if number == 1:
                 break
     except ValueError:
